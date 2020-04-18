@@ -10,4 +10,4 @@ sudo docker run --init -d --name="home-assistant" -e "TZ=America/New_York" -v /h
 /config --net=host homeassistant/home-assistant:stable
 ```
 
-Runs, (for me) on (http://athena:8123)[http://athena:8123]
+Runs, (for me) on [athena:8123](http://athena:8123)
