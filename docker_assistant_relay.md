@@ -34,6 +34,14 @@ docker run --rm -d \
     -e TZ=America/New_York \
     kmlucy/docker-assistant-relay
 ```
-In config, need to change baseUrl (either on host or in container)
+* In config, need to change baseUrl (either on host or in container)
+* may need to adjust quiet hours, or turn off
+
+
+### Docker, part 2
+Updated to use v3.2, in docker-assistant-relay repo
+* Need to turn off broadcast
+* Debug turning off broadcast from POST
+* Look into adding devices
 
 ### Hooking Up
