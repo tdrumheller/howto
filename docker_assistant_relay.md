@@ -33,5 +33,7 @@ docker run --rm -d \
     -v /opt/dar/tokens:/assistant-relay/server/configurations/tokens:ro \
     -e TZ=America/New_York \
     kmlucy/docker-assistant-relay
+```
+In config, need to change baseUrl (either on host or in container)
 
 ### Hooking Up
