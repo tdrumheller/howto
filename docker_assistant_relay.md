@@ -40,8 +40,17 @@ docker run --rm -d \
 
 ### Docker, part 2
 Updated to use v3.2, in docker-assistant-relay repo
-* Need to turn off broadcast
-* Debug turning off broadcast from POST
+
 * Look into adding devices
 
 ### Hooking Up
+Once home assistant is running, a cURL command can interact (from `localhost` or using the hostname):
+```
+curl -H 'Content-Type: application/json' -d '{"user": "tom", "command": "ask fordpass to lock my car"}' localhost:3000/assistant
+```
+Note that the header needs to be set.
+
+In the cron file:
+```
+00 22 * * * curl -H 'Content-Type: application/json' -d '{"user": "tom", "command": "ask fordpass to lock my car"}' localhost:3000/assistant
+```
