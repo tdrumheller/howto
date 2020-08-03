@@ -17,7 +17,7 @@ copy the oath file from above to `/opt/dar/secrets/<user>.json`
 docker run --rm -it \
     -v /opt/dar/secrets:/assistant-relay/server/configurations/secrets \
     -v /opt/dar/tokens:/assistant-relay/server/configurations/tokens \
-    kmlucy/docker-assistant-relay
+    tdrumhel/docker-assistant-relay:v3
 ```
 Had to:
 1. start another docker instance with sh
@@ -26,13 +26,19 @@ Had to:
 1. change `server/configurations/config.json` to use port 30001
 1. get code, paste into original container
 
+If restarting:
+1. go to setup
+1. reupload json file - should save that off
+1. get new auth code
+1. paste into webapp
+
 ```
 docker run --rm -d \
     --name assistant-relay -p 3000:3000 \
     -v /opt/dar/secrets:/assistant-relay/server/configurations/secrets:ro \
     -v /opt/dar/tokens:/assistant-relay/server/configurations/tokens:ro \
     -e TZ=America/New_York \
-    kmlucy/docker-assistant-relay
+    tdrumhel/docker-assistant-relay:v3
 ```
 * In config, need to change baseUrl (either on host or in container)
 * may need to adjust quiet hours, or turn off
