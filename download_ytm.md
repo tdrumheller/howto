@@ -9,9 +9,21 @@ Information on how to donwload MP3s from youtube music. Uses the signed in accou
 
 ## Installation
 Need to install the package and ffmpeg
-###
+```
 sudo apt-get install ffmpeg
 pip3 install --upgrade ty-dlp
-###
+```
 
 ## Download
+```
+yt-dlp --remote-components ejs:github --cookies-from-browser chrome -x --audio-format mp3 --audio-quality 0 -o "%(title)s.%(ext)s" --embed-thumbnail --add-metadata <URL>
+```
+* `--remote-components ejs:github` handles challenges
+* `--cookies-from-browser chrome` Uses cookies from chrome to access YouTube Music Premium
+* `-x` Extracts audio from video files
+* `--audio-format mp3` Use MP3
+* `--audio-quality 0` Use the highest available quality
+* `-o "%(title)s.%(ext)s"` Specify a string for the filename. May want to add artist/album
+* `--embed-thumbnail` Add the album cover
+* `--add-metadata` Embed metadata
+* `<URL>` The playlist/albumb/song url
